@@ -77,5 +77,5 @@ set splitbelow
 set splitright
 
 map <C-n> :NERDTreeToggle<CR>
-map <C-m> :TagbarToggle<CR>
+map <C-t> :TagbarToggle<CR>
 map <C-p> :CtrlP<CR>

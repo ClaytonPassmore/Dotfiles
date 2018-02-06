@@ -1,12 +1,12 @@
 """""""""""""""""""""""""""""""""""""
-" Allan MacGregor Vimrc configuration 
+" Allan MacGregor Vimrc configuration
 """""""""""""""""""""""""""""""""""""
 set nocompatible
 syntax on
 set nowrap
 set encoding=utf8
 
-"""" START Vundle Configuration 
+"""" START Vundle Configuration
 
 " Disable file type for vundle
 filetype off                  " required
@@ -29,7 +29,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'reedes/vim-pencil'
 Plugin 'Shougo/neocomplete.vim'
 
-" Generic Programming Support 
+" Generic Programming Support
 Plugin 'jakedouglas/exuberant-ctags'
 
 " Theme / Interface
@@ -42,7 +42,7 @@ set backspace=indent,eol,start
 call vundle#end()            " required
 filetype plugin indent on    " required
 filetype plugin on    " required
-"""" END Vundle Configuration 
+"""" END Vundle Configuration
 
 """""""""""""""""""""""""""""""""""""
 " Configuration Section
@@ -61,10 +61,20 @@ set ruler
 
 " Set Proper Tabs
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
 set smarttab
 set expandtab
+
 set hlsearch
+set ignorecase
+set smartcase
+set showmatch
+set ai
+set si
+
+set splitbelow
+set splitright
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-m> :TagbarToggle<CR>

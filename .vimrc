@@ -1,15 +1,16 @@
-"""""""""""""""""""""""""""""""""""""
-" Allan MacGregor Vimrc configuration
-"""""""""""""""""""""""""""""""""""""
 set nocompatible
 syntax on
 set nowrap
 set encoding=utf8
+set noswapfile
 
 """" START Vundle Configuration
 
 " Disable file type for vundle
 filetype off                  " required
+
+" set the runtime path to include fzf
+set rtp+=/usr/local/opt/fzf
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -22,15 +23,19 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'ervandew/supertab'
-Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'reedes/vim-pencil'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'junegunn/fzf.vim'
 
 " Generic Programming Support
 Plugin 'jakedouglas/exuberant-ctags'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'gabrielelana/vim-markdown'
+Plugin 'sheerun/vim-polyglot'
 
 " Theme / Interface
 Plugin 'vim-airline/vim-airline'
@@ -78,4 +83,11 @@ set splitright
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-t> :TagbarToggle<CR>
-map <C-p> :CtrlP<CR>
+map <C-o> :GFiles<CR>
+map <C-p> :FZF<CR>
+
+" Strip whitespace from the end of linse
+map <leader>s :%s/\s\+$//e<CR>
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/

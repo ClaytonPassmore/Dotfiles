@@ -1,5 +1,4 @@
 set nocompatible
-syntax on
 set nowrap
 set encoding=utf8
 set noswapfile
@@ -10,7 +9,7 @@ set noswapfile
 filetype off                  " required
 
 " set the runtime path to include fzf
-set rtp+=/usr/local/opt/fzf
+set rtp+=/usr/bin/fzf
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -23,16 +22,19 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'ervandew/supertab'
-" Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'reedes/vim-pencil'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'junegunn/fzf.vim'
+Plugin 'jremmen/vim-ripgrep'
+Plugin 'wincent/ferret'
+"Plugin 'airblade/vim-gitgutter'
 
 " Generic Programming Support
-Plugin 'jakedouglas/exuberant-ctags'
+"Plugin 'jakedouglas/exuberant-ctags'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'sheerun/vim-polyglot'
@@ -42,12 +44,14 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 " OSX stupid backspace fix
-set backspace=indent,eol,start
+"set backspace=indent,eol,start
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 filetype plugin on    " required
 """" END Vundle Configuration
+
+syntax on
 
 """""""""""""""""""""""""""""""""""""
 " Configuration Section
@@ -61,7 +65,7 @@ let g:NERDCommentEmptyLines = 1
 
 
 " Show linenumbers
-set number
+"set number
 set ruler
 
 " Set Proper Tabs
@@ -80,6 +84,12 @@ set si
 
 set splitbelow
 set splitright
+
+" Fixes colorscheme with tmux for some reason
+set background=dark
+
+" Max line length
+set colorcolumn=80
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-t> :TagbarToggle<CR>

@@ -61,3 +61,9 @@ export PATH=/usr/local/opt/postgresql@9.4/bin:/Users/clayton/.rbenv/shims:/usr/l
 # eval $(thefuck --alias)
 
 . /usr/local/etc/profile.d/z.sh
+
+# Easy search and open
+alias vimf="vim \$(fzf)"
+
+# Respect gitignore with fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
